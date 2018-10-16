@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// stateless component 
 function Hello({name = 'Jean'}) {
-  return <div className="Hello">Hello {name}</div>;
+  return (
+    <div className="Hello">
+      Hello {name}
+    </div>
+  );
 }
 
 /*

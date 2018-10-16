@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// statefull component 
 class Clock extends Component {
   constructor() {
     super();
@@ -13,7 +14,7 @@ class Clock extends Component {
       this.setState({
         now: new Date(),
       });
-    }, 1000); 
+    }, 1000);
   }
 
   componentWillUnmount() {

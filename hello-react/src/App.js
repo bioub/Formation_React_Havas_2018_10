@@ -4,11 +4,23 @@ import Clock from './Clock';
 import ButtonCounter from './ButtonCounter';
 import ClockHideable from './ClockHideable';
 import Dropdown from './Dropdown';
+import ContactForm from './ContactForm';
 
 class App extends Component {
+  state = {
+    couleurs: ['Rouge', 'Vert', 'Bleu'],
+    selectedCouleur: 'Rouge',
+  };
+
+  handleDropdownSelect = (couleur) => {
+    this.setState({
+      selectedCouleur: couleur,
+    });
+  };
+
   render() {
     return (
-      <div className="App">
+      <>
         <Hello />
         <Hello name="Romain" />
         <hr />
@@ -18,8 +30,11 @@ class App extends Component {
         <hr />
         <ClockHideable />
         <hr />
-        <Dropdown items={['Rouge', 'Vert', 'Bleu']}/>
-      </div>
+        <Dropdown items={this.state.couleurs} onSelect={this.handleDropdownSelect} />
+        {this.state.selectedCouleur}
+        <hr />
+        <ContactForm />
+      </>
     );
     /*
     return React.createElement('div', { className: 'App'},

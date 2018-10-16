@@ -27,7 +27,7 @@ class ButtonCounter extends Component {
     this.setState({
       count: this.state.count + 1,
     });
-  }  
+  }
 
   render() {
     return <button onClick={this.increment}>{this.state.count}</button>
