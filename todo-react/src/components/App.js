@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import css from './App.module.scss';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 import uuid from 'uuid';
@@ -34,7 +34,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={css.App}>
         <TodoForm onNewTodo={this.handleNewTodo}/>
         <TodoList todos={this.state.todos}/>
       </div>

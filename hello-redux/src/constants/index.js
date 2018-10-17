@@ -1,1 +1,2 @@
 export const COUNTER_INCREMENT = 'COUNTER_INCREMENT';
+export const NAME_CHANGE = 'NAME_CHANGE';

@@ -14,13 +14,13 @@ export class ContactForm extends Component {
       prenom: this.state.prenom,
       nom: this.state.nom,
     });
-  }
+  };
 
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
-  }
+  };
 
   render() {
     return (
