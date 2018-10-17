@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "todo-redux"
+		},
+		{
+			"path": "addressbook-react"
 		}
 	],
 	"settings": {}

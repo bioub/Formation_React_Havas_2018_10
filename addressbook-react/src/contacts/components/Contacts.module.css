@@ -1,0 +1,32 @@
+.Contacts {
+  display: flex;
+  margin: 5px;
+}
+
+.Contacts > * {
+  margin: 0 3px;
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid darkcyan;
+  background: #fefefe;
+  border-radius: 5px;
+}
+
+.List > a {
+  padding: 5px;
+  border-bottom: 1px solid darkcyan;
+  text-decoration: none;
+  color: darkcyan;
+  font-size: 1.4em;
+}
+
+.List > a:hover {
+  background: lightgray;
+}
+
+.List > a:last-child {
+  border-bottom: none;
+}

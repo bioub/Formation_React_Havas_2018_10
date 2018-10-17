@@ -1,31 +1,34 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import { func } from 'prop-types';
+import { selectNewTodo } from '../selectors';
+import { todoChange, todoAdd } from '../actions';
 
-class TodoForm extends Component {
-
+class TodoForm extends PureComponent {
   static propTypes = {
     onNewTodo: func.isRequired,
   };
 
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    // dispatch -> TODO_ADD
-  };
-
-  handleChange = (event) => {
-    event.preventDefault();
-    // dispatch -> TODO_CHANGE
-  };
-
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input value={this.state.todoText} onChange={this.handleChange}/>
+      <form onSubmit={(event) => this.props.handleSubmit(event, this.props.todoText)}>
+        <input value={this.props.todoText} onChange={this.props.handleChange}/>
         <button>+</button>
       </form>
     );
   }
 }
 
-export default TodoForm;
+const mapStateToProps = (state) => ({
+  todoText: selectNewTodo(state),
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  handleSubmit: (event, todoText) => {
+    event.preventDefault();
+    dispatch(todoAdd(todoText));
+  },
+  handleChange: (event) => dispatch(todoChange(event.target.value)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoForm);

@@ -1,0 +1,20 @@
+.App {
+
+}
+
+.Menu {
+  background: darkcyan;
+  display: flex;
+  padding: 10px 0;
+}
+
+.Menu a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 1.4em;
+}
+
+.Menu a:hover {
+  text-decoration: underline;
+}
