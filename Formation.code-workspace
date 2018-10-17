@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "hello-redux"
+		},
+		{
+			"path": "todo-redux"
 		}
 	],
 	"settings": {}
